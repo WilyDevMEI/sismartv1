@@ -43,6 +43,18 @@ task('deploy:prepare', [
     'deploy:shared',
     // 'deploy:writable',
 ]);
+
+task('deploy', [
+    'deploy:prepare',
+    'deploy:vendors',
+    'artisan:storage:link',
+    'artisan:config:cache',
+    'artisan:route:cache',
+    'artisan:view:cache',
+    'artisan:event:cache',
+    // 'artisan:migrate',
+    'deploy:publish',
+]);
 task('artisan:config:clear')->addAfter('deploy:vendors');
 
 
