@@ -24,7 +24,8 @@ set('port', 423);
 
 host('103.55.39.211')
     ->set('http_user', 'mitoener')
-    ->set('branch', 'develop')
+    ->set('branch', 'nipe')
+    ->set('shared_files', ['.env'])
     ->set('deploy_path', '/home/mitoener/test');
     // ->set('remote_user', 'mitoener')
     // ->set('port', 432)
@@ -42,6 +43,7 @@ task('deploy:prepare', [
     'deploy:shared',
     // 'deploy:writable',
 ]);
+task('artisan:config:clear')->addAfter('deploy:vendors');
 
 
 // after('deploy:failed', 'deploy:unlock');

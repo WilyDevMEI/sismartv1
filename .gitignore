@@ -6,7 +6,6 @@
 /vendor
 .env
 .env.backup
-.env.production
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
@@ -20,3 +19,4 @@ node_modules
 
 .direnv
 .envrc
+hot
